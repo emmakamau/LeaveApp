@@ -1,7 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using LeaveApp.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<LeaveAppContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LeaveAppContext") ?? throw new InvalidOperationException("Connection string 'LeaveAppContext' not found.")));
 
 var app = builder.Build();
 

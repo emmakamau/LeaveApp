@@ -1,0 +1,64 @@
+﻿@page
+@model LeaveApp.Pages.Staffs.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Staff</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Staff.FName" class="control-label"></label>
+                <input asp-for="Staff.FName" class="form-control" />
+                <span asp-validation-for="Staff.FName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Staff.LName" class="control-label"></label>
+                <input asp-for="Staff.LName" class="form-control" />
+                <span asp-validation-for="Staff.LName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Staff.Department" class="control-label"></label>
+                <input asp-for="Staff.Department" class="form-control" />
+                <span asp-validation-for="Staff.Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Staff.DateJoined" class="control-label"></label>
+                <input asp-for="Staff.DateJoined" class="form-control" />
+                <span asp-validation-for="Staff.DateJoined" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Staff.Designation" class="control-label"></label>
+                <input asp-for="Staff.Designation" class="form-control" />
+                <span asp-validation-for="Staff.Designation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Staff.LeaveDays" class="control-label"></label>
+                <input asp-for="Staff.LeaveDays" class="form-control" />
+                <span asp-validation-for="Staff.LeaveDays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Staff.Sickoffs" class="control-label"></label>
+                <input asp-for="Staff.Sickoffs" class="form-control" />
+                <span asp-validation-for="Staff.Sickoffs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

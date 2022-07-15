@@ -1,0 +1,72 @@
+﻿@page
+@model LeaveApp.Pages.Staffs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].FName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].LName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].DateJoined)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Designation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].LeaveDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Sickoffs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Staff) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateJoined)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sickoffs)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.StaffId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.StaffId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.StaffId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
